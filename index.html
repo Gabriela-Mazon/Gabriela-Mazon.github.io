@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriela Mazon Rabello de Souza - Portfólio</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Lato', sans-serif;
@@ -34,41 +37,62 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #9d4edd; /* Cor roxa/magenta */
+            border: 4px solid #9d4edd;
             margin-bottom: 20px;
         }
         h1, h2 {
             font-family: 'Montserrat', sans-serif;
             color: #2c3e50;
         }
+        h1 {
+            font-size: 2.2em; /* Título principal um pouco maior */
+        }
         h2 {
-            border-bottom: 2px solid #9d4edd; /* Cor roxa/magenta */
+            border-bottom: 2px solid #9d4edd;
             padding-bottom: 10px;
-            margin-top: 40px;
+            margin-top: 50px; /* Mais espaço entre seções */
         }
         a {
-            color: #9d4edd; /* Cor roxa/magenta */
+            color: #9d4edd;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         a:hover {
-            color: #7b2cbf; /* Roxo mais escuro */
+            color: #7b2cbf;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: #9d4edd; /* Cor roxa/magenta */
-            color: #ffffff;
-            padding: 12px 25px;
-            border-radius: 5px;
+
+        /* --- NOVA SEÇÃO: GALERIA DE PROJETOS --- */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .project-card {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 22px rgba(0,0,0,0.1);
+        }
+        .project-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #9d4edd;
+            margin-top: 0;
+        }
+        .project-card p {
+            font-size: 0.9em;
+        }
+        .project-card a {
             font-weight: bold;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 0.9em;
         }
-        .cta-button:hover {
-            background-color: #7b2cbf; /* Roxo mais escuro */
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
+
         footer {
             text-align: center;
             margin-top: 50px;
@@ -85,36 +109,51 @@
             transition: fill 0.3s ease;
         }
         .social-links a:hover svg {
-            fill: #9d4edd; /* Cor roxa/magenta */
+            fill: #9d4edd;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header class="header">
+        <header class="header" data-aos="fade-down">
             <img src="https://github.com/Gabriela-Mazon.png" alt="Foto de Perfil da Gabriela" class="profile-pic">
             
-            <h1>Olá, eu sou a Gabriela Mazon Rabello de Souza!</h1>
-            <p>Bem-vinda ao meu site pessoal. Sou uma estudante de Ciência da Computação apaixonada por tecnologia e programação.</p>
+            <h1><span id="typing-effect"></span></h1>
+            <p>Bem-vinda ao meu portfólio digital.</p>
         </header>
 
-        <section>
+        <section data-aos="fade-up">
             <h2>Sobre Mim</h2>
             <p>
                 Atualmente, estou explorando o mundo dos games e focando em aprender como funciona o desenvolvimento gráfico de um jogo. Nas horas vagas, gosto de aprender novas linguagens de programação, com foco em C/C++ no momento.
             </p>
         </section>
 
-        <section>
-            <h2>Meus Projetos</h2>
-            <p>Você pode ver todos os meus projetos acadêmicos e pessoais no meu perfil do GitHub. Explore meu trabalho para ver o que tenho desenvolvido!</p>
-            <p style="text-align: center; margin-top: 20px;">
-                <a href="https://github.com/Gabriela-Mazon?tab=repositories" target="_blank" class="cta-button">Ver Meus Repositórios</a>
-            </p>
+        <section data-aos="fade-up">
+            <h2>Projetos em Destaque</h2>
+            <div class="project-gallery">
+                <div class="project-card">
+                    <h3>Nome do Projeto 1</h3>
+                    <p>Uma breve descrição do seu projeto. Fale sobre o objetivo e o que ele faz. Por exemplo: "Um jogo de plataforma 2D desenvolvido em C++."</p>
+                    <a href="https://github.com/Gabriela-Mazon/LINK-PARA-O-PROJETO" target="_blank">Ver no GitHub &rarr;</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Nome do Projeto 2</h3>
+                    <p>Uma breve descrição do seu projeto. Fale sobre o objetivo e o que ele faz. Por exemplo: "Ferramenta para organizar tarefas de estudo."</p>
+                    <a href="https://github.com/Gabriela-Mazon/LINK-PARA-O-PROJETO" target="_blank">Ver no GitHub &rarr;</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Nome do Projeto 3</h3>
+                    <p>Uma breve descrição do seu projeto. Fale sobre o objetivo e o que ele faz. Por exemplo: "Website que criei para uma disciplina da faculdade."</p>
+                    <a href="https://github.com/Gabriela-Mazon/LINK-PARA-O-PROJETO" target="_blank">Ver no GitHub &rarr;</a>
+                </div>
+            </div>
         </section>
 
-        <section>
+        <section data-aos="fade-up">
             <h2>Hobbies e Interesses</h2>
             <ul>
                 <li><strong>Jogos:</strong> Gosto de jogos de FPS como Valorant e CS GO.</li>
@@ -124,7 +163,7 @@
             </ul>
         </section>
 
-        <footer>
+        <footer data-aos="fade-up">
             <h2>Conecte-se comigo</h2>
             <div class="social-links">
                 <a href="https://github.com/Gabriela-Mazon" target="_blank" title="GitHub">
@@ -136,6 +175,31 @@
             </div>
         </footer>
     </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+        // Inicia a biblioteca de animação ao rolar
+        AOS.init({
+            duration: 1000, // Duração da animação em milissegundos
+            once: true, // Animação acontece apenas uma vez
+        });
+
+        // Configura o efeito de "máquina de escrever"
+        var options = {
+            strings: [
+                'Olá, eu sou a Gabriela!',
+                'Desenvolvedora em Formação.',
+                'Entusiasta de Games.'
+                ],
+            typeSpeed: 50, // Velocidade de digitação
+            backSpeed: 25, // Velocidade para apagar
+            loop: true // Repete a animação
+        };
+
+        var typed = new Typed('#typing-effect', options);
+    </script>
 
 </body>
 </html>
